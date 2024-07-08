@@ -1,0 +1,187 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+    Layout = null;
+
+    <link rel="stylesheet" href="~/Content/Stylesheet/stylesheet.css" asp-append-version="true" />
+}
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dang nhap</title>
+    <link href="~/Content/LoginStyle.css" rel="stylesheet" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="wrapper">
+        <form class="login-form">
+            <h1>Đăng nhập</h1>
+            <div class="input-box">
+                <i class='bx bx-user-circle'></i>
+                <input type="text" placeholder="Tên đăng nhập" required />
+            </div>
+
+            <div class="input-box">
+                <i class='bx bx-lock-alt'></i>
+                <input type="password" placeholder="Mật khẩu" required />
+            </div>
+
+            <div class="remember-forgot">
+                <label><input type="checkbox" />Nhớ mật khẩu</label>
+                <a href="#">Quên mật khẩu?</a>
+            </div>
+
+            <button type="submit" class="btn">Đăng nhập</button>
+
+            <div class="register-link">
+                <p> Chưa có tài khoản? <a href="~/Account/Register">Đăng Ký</a></p>
+            </div>
+        </form>
+    </div>
+</body>
+
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial;
+    }
+
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 1px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background: url("~/Content/Images/hotel2.jpg") !important;
+    }
+
+    .wrapper {
+        width: 375px;
+        height: 360px;
+        border: 2px solid rgba(255, 255, 255, .2);
+        border-radius: 10px;
+        backdrop-filter: blur(8px);
+        box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+        background: #fefafa45;
+        justify-content: center; /* Căn giữa nội dung theo chiều ngang */
+        align-items: center; /* Căn giữa nội dung theo chiều dọc */
+        padding: 20px; /* Khoảng cách bên trong để tránh sát viền */
+    }
+
+    .login-form {
+        width: 375px;
+        display: center;
+        flex-direction: column;
+        position: center;
+    }
+
+    .wrapper h1 {
+        font-size: 30px;
+        text-align: center;
+        color: #022B60;
+        top: 50px;
+        margin-top: 10px;
+        margin-right: 30px;
+    }
+
+    .input-box {
+        position: relative;
+        width: 350px;
+        height: 50px;
+        margin: 30px 0;
+    }
+
+        .input-box input {
+            width: 330px;
+            height: 100%;
+            background: #f5f5f591;
+            border: none;
+            outline: none;
+            border: 2px solid rgba(255, 255, 255, .2);
+            border-radius: 10px;
+            font-size: 13px;
+            padding: 20px 45px 20px 20px;
+        }
+
+            .input-box input::placeholder {
+                color: #000000a9;
+            }
+
+        .input-box i {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 20px;
+            margin-right: 20px;
+        }
+
+    .wrapper .remember-forgot {
+        display: flex;
+        justify-content: space-between;
+        font-size: 14px;
+        margin: -15px 0 15px;
+    }
+
+    .remember-forgot label input {
+        accent-color: #022B60;
+        margin-right: 3px;
+    }
+
+    .remember-forgot label {
+        color: #022B60;
+    }
+
+    .remember-forgot a {
+        color: #C5D8D1;
+        text-decoration: none;
+        margin-right: 40px;
+    }
+
+        .remember-forgot a:hover {
+            text-decoration: underline;
+        }
+
+    .wrapper .btn {
+        width: 130px;
+        height: 45px;
+        background: #022b60df;
+        border: none;
+        outline: none;
+        border-radius: 25px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+        cursor: pointer;
+        font-size: 16px;
+        color: #C5D8D1;
+        font-weight: 600;
+        transform: translate(93%);
+        margin-left: -20px;
+    }
+
+    .wrapper .register-link {
+        font-size: 14px;
+        text-align: center;
+        margin: 20px 0 15px;
+        margin-left: -20px;
+    }
+
+    .register-link p a {
+        color: #C5D8D1;
+        text-align: center;
+    }
+
+    .register-link p {
+        color: #022B60;
+    }
+
+        .register-link p a:hover {
+            text-decoration: underline;
+        }
+</style>
+
+

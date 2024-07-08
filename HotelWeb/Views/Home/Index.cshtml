@@ -1,0 +1,466 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+    <link rel="stylesheet" href="~/Content/Stylesheet/stylesheet.css" asp-append-version="true" />
+}
+
+<div class="booking-bar">
+    <form class="booking-bar-list" method="get" action="/Search">
+        <div class="form-group-list">
+            <div class="form-group">
+                <label for="checkin">Nhận phòng</label>
+                <input type="date" id="checkin" name="checkin" style="width: 200px" />
+            </div>
+            <div class="date">đêm</div>
+            <div class="form-group">
+                <label for="checkout">Trả phòng</label>
+                <input type="date" id="checkout" name="checkout" style="width: 200px" />
+            </div>
+        </div>
+        <div class="form-group-list">
+            <div class="form-group">
+                <label for="rooms">PHÒNG</label>
+                <input class="width-120" type="number" id="rooms" name="rooms" min="1" value="1" />
+            </div>
+            <div class="form-group">
+                <label for="adults">Người lớn</label>
+                <input class="width-120" type="number" id="adults" name="adults" min="1" value="2" />
+            </div>
+            <div class="form-group">
+                <label for="children">Trẻ em</label>
+                <input class="width-120" type="number" id="children" name="children" min="0" value="0" />
+            </div>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="search-button">Tìm kiếm</button>
+        </div>
+    </form>
+</div>
+<div class="home">
+    <p class="home-text">Ưu đãi đặc biệt</p>
+    <div class="endow-component row">
+        <div class="col-4">
+            <div class=" promotion-item" style="width: 100%; display: inline-block;">
+                <div class="item-img" style="position: relative; overflow: hidden;">
+
+                    <a href="https://www.lottehotel.com/content/dam/lotte-hotel/lotte/saigon/promotion/package/6402-3-2000-pkg-LTHO.jpg.thumb.480.480.jpg" data-event-category="Web_Branch_Main_LTHO" data-event-action="Promotion_1" data-event-label="Summer Escapes Deal" tabindex="0">
+                        <img src="https://www.lottehotel.com/content/dam/lotte-hotel/lotte/saigon/promotion/package/6402-3-2000-pkg-LTHO.jpg.thumb.480.480.jpg" alt="Summer Escapes Deal - Room Promotion" data-mobile="https://www.lottehotel.com/content/dam/lotte-hotel/lotte/saigon/promotion/package/6402-3-2000-pkg-LTHO.jpg.thumb.480.480.jpg" data-tablet="https://www.lottehotel.com/content/dam/lotte-hotel/lotte/saigon/promotion/package/6402-3-2000-pkg-LTHO.jpg.thumb.480.480.jpg" data-web="https://www.lottehotel.com/content/dam/lotte-hotel/lotte/saigon/promotion/package/6402-3-2000-pkg-LTHO.jpg.thumb.480.480.jpg">
+                    </a>
+                </div>
+                <div class="txt-promotion">
+                    <div class="promotion-ttl ">Summer Escapes Deal</div>
+                    <div class="promotion-copy"><span>Chào hè với kỳ nghỉ tại khách sạn LOTTE Sài Gòn, ưu đãi hấp dẫn lên đến 25% cùng chính sách hủy phòng miễn phí. </span></div>
+
+                    <div class="promotion-date">
+                        <strong class="">Ở lại : </strong>
+                        <span data-target="conversionDateFormat">Apr 4, 2024</span> - <span data-target="conversionDateFormat">Sep 30, 2024</span>
+                    </div>
+                    <div class="promotion-date">
+                        <strong class="">Đặt phòng : </strong>
+                        <span data-target="conversionDateFormat">Apr 4, 2024</span> - <span data-target="conversionDateFormat">Sep 30, 2024</span>
+                    </div>
+                </div>
+                <div class="promotion-price">
+                    <span class="category">ROOM</span>
+
+                    <div class="promotion-price-detail">
+                        <span class="promotion-price__currency">From</span>
+                        <strong class="price__number "><span class="f-bold" data-target="conversionCurrency" data-orgnprice="2,820,000">2,820,000</span></strong>
+                        <span class="price__currency f-bold" data-target="conversionCurrency" data-orgnprice="VND">VND</span>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class=" promotion-item" style="width: 100%; display: inline-block;">
+                <div class="item-img" style="position: relative; overflow: hidden;">
+
+                    <a href="https://www.lottehotel.com/content/dam/lotte-hotel/lotte/saigon/promotion/package/6402-3-2000-pkg-LTHO.jpg.thumb.480.480.jpg" data-event-category="Web_Branch_Main_LTHO" data-event-action="Promotion_1" data-event-label="Summer Escapes Deal" tabindex="0">
+                        <img src="https://www.lottehotel.com/content/dam/lotte-hotel/lotte/saigon/promotion/package/6402-3-2000-pkg-LTHO.jpg.thumb.480.480.jpg" alt="Summer Escapes Deal - Room Promotion" data-mobile="https://www.lottehotel.com/content/dam/lotte-hotel/lotte/saigon/promotion/package/6402-3-2000-pkg-LTHO.jpg.thumb.480.480.jpg" data-tablet="https://www.lottehotel.com/content/dam/lotte-hotel/lotte/saigon/promotion/package/6402-3-2000-pkg-LTHO.jpg.thumb.480.480.jpg" data-web="https://www.lottehotel.com/content/dam/lotte-hotel/lotte/saigon/promotion/package/6402-3-2000-pkg-LTHO.jpg.thumb.480.480.jpg">
+                    </a>
+                </div>
+                <div class="txt-promotion">
+                    <div class="promotion-ttl ">Summer Escapes Deal</div>
+                    <div class="promotion-copy"><span>Chào hè với kỳ nghỉ tại khách sạn LOTTE Sài Gòn, ưu đãi hấp dẫn lên đến 25% cùng chính sách hủy phòng miễn phí. </span></div>
+
+                    <div class="promotion-date">
+                        <strong class="">Ở lại : </strong>
+                        <span data-target="conversionDateFormat">Apr 4, 2024</span> - <span data-target="conversionDateFormat">Sep 30, 2024</span>
+                    </div>
+                    <div class="promotion-date">
+                        <strong class="">Đặt phòng : </strong>
+                        <span data-target="conversionDateFormat">Apr 4, 2024</span> - <span data-target="conversionDateFormat">Sep 30, 2024</span>
+                    </div>
+                </div>
+                <div class="promotion-price">
+                    <span class="category">ROOM</span>
+
+                    <div class="promotion-price-detail">
+                        <span class="promotion-price__currency">From</span>
+                        <strong class="price__number "><span class="f-bold" data-target="conversionCurrency" data-orgnprice="2,820,000">2,820,000</span></strong>
+                        <span class="price__currency f-bold" data-target="conversionCurrency" data-orgnprice="VND">VND</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class=" promotion-item" style="width: 100%; display: inline-block;">
+                <div class="item-img" style="position: relative; overflow: hidden;">
+
+                    <a href="https://www.lottehotel.com/content/dam/lotte-hotel/lotte/saigon/promotion/package/6402-3-2000-pkg-LTHO.jpg.thumb.480.480.jpg" data-event-category="Web_Branch_Main_LTHO" data-event-action="Promotion_1" data-event-label="Summer Escapes Deal" tabindex="0">
+                        <img src="https://www.lottehotel.com/content/dam/lotte-hotel/lotte/saigon/promotion/package/6402-3-2000-pkg-LTHO.jpg.thumb.480.480.jpg" alt="Summer Escapes Deal - Room Promotion" data-mobile="https://www.lottehotel.com/content/dam/lotte-hotel/lotte/saigon/promotion/package/6402-3-2000-pkg-LTHO.jpg.thumb.480.480.jpg" data-tablet="https://www.lottehotel.com/content/dam/lotte-hotel/lotte/saigon/promotion/package/6402-3-2000-pkg-LTHO.jpg.thumb.480.480.jpg" data-web="https://www.lottehotel.com/content/dam/lotte-hotel/lotte/saigon/promotion/package/6402-3-2000-pkg-LTHO.jpg.thumb.480.480.jpg">
+                    </a>
+                </div>
+                <div class="txt-promotion">
+                    <div class="promotion-ttl ">Summer Escapes Deal</div>
+                    <div class="promotion-copy"><span>Chào hè với kỳ nghỉ tại khách sạn LOTTE Sài Gòn, ưu đãi hấp dẫn lên đến 25% cùng chính sách hủy phòng miễn phí. </span></div>
+
+                    <div class="promotion-date">
+                        <strong class="">Ở lại : </strong>
+                        <span data-target="conversionDateFormat">Apr 4, 2024</span> - <span data-target="conversionDateFormat">Sep 30, 2024</span>
+                    </div>
+                    <div class="promotion-date">
+                        <strong class="">Đặt phòng : </strong>
+                        <span data-target="conversionDateFormat">Apr 4, 2024</span> - <span data-target="conversionDateFormat">Sep 30, 2024</span>
+                    </div>
+                </div>
+                <div class="promotion-price">
+                    <span class="category">ROOM</span>
+
+                    <div class="promotion-price-detail">
+                        <span class="promotion-price__currency">From</span>
+                        <strong class="price__number "><span class="f-bold" data-target="conversionCurrency" data-orgnprice="2,820,000">2,820,000</span></strong>
+                        <span class="price__currency f-bold" data-target="conversionCurrency" data-orgnprice="VND">VND</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content row">
+        <div class="content-left col-3">
+            <div class="content-left-text">
+                Nằm tại vị trí đắc địa trên đường Sư Vạn Hạnh, quận 10, Khách sạn Salford & Co là điểm đến lý tưởng cho du khách seeking sự tiện nghi và sang trọng. Khách sạn mang đến không gian nghỉ dưỡng hiện đại, tinh tế cùng dịch vụ hoàn hảo, hứa hẹn mang đến cho quý khách những trải nghiệm khó quên.
+            </div>
+            <div class="content-left-weather">
+                <p class="content-left-weather_item">Thời tiết địa phương</p>
+                <!-- weather widget start --><a target="_blank" href="https://hotelmix.vn/weather/ho-chi-minh-city-18408">
+                    <img width="90%" src="https://w.bookcdn.com/weather/picture/2_18408_1_33_009fde_350_ffffff_333333_08488D_1_ffffff_333333_0_6.png?scode=70241&domid=1180&anc_id=20421" alt="booked.net" />
+                </a><!-- weather widget end -->
+            </div>
+        </div>
+        <div class="content-right col-9">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.4602263434367!2d106.66478451104228!3d10.776019959156049!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752edb765b5c25%3A0x9a3519bdad5a85a3!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBOZ2_huqFpIG5n4buvIC0gVGluIGjhu41jIFRow6BuaCBwaOG7kSBI4buTIENow60gTWluaCAoSFVGTElUKQ!5e0!3m2!1svi!2s!4v1720094885391!5m2!1svi!2s"
+                    width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+    </div>
+
+</div>
+
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .home {
+        margin-top: 185px;
+        background: #fff;
+    }
+
+    .home-text {
+        font-size: 35px;
+        text-align: center;
+        margin-bottom: 2px;
+        padding-top: 35px;
+    }
+
+    header {
+        background-color: #f5f5f5;
+    }
+
+    .top-nav {
+        background-color: #fff;
+        border-bottom: 1px solid #ddd;
+        padding: 10px 0;
+    }
+
+    nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+    }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+            nav ul li a {
+                text-decoration: none;
+                color: #333;
+                font-weight: bold;
+            }
+
+    .booking-bar {
+        /*        background-color: #e0f7fa;*/
+        flex: 1;
+        justify-content: center;
+        /*        border-radius: 8px;*/
+        /*        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);*/
+        background-color: #fff;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        position: fixed;
+        right: 0;
+        left: 0;
+        z-index: 5;
+        top: 87px;
+    }
+
+    .booking-bar-list {
+    }
+
+    form {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 35px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    div.form-group-list {
+        display: flex;
+        border-right: 1px solid #f5f5f5;
+        padding-right: 37px;
+    }
+
+    .date {
+        margin-right: 10px;
+        width: 60px;
+        text-align: center;
+        margin-bottom: 5px;
+    }
+
+    div.form-group-list:first-child {
+        align-items: end;
+    }
+
+    .form-group {
+        display: flex;
+        margin-right: 10px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+        .form-group:last-child {
+            margin-right: 0;
+        }
+
+        .form-group label {
+            font-weight: 500;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+    div input.width-120 {
+        width: 120px;
+    }
+
+    input[type="date"],
+    input[type="number"],
+    .search-button {
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+
+        input[type="date"]:focus,
+        input[type="number"]:focus,
+        .search-button:focus {
+            border-color: #007bff;
+            outline: none;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        }
+
+    form input {
+        width: 100%;
+    }
+
+    .search-button {
+        background-color: var(--btnMainColor);
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        padding: 10px 20px;
+        border-radius: 4px;
+        transition: background-color 0.3s ease;
+    }
+
+        .search-button:hover {
+            background-color: var(--btnMainColor);
+            opacity: 0.9;
+        }
+
+    footer {
+        background-color: var(--colorTextNature);
+        color: #fff;
+        padding: 10px 0;
+        text-align: center;
+    }
+
+    /*endow-component*/
+    .endow-component {
+        flex-direction: row;
+        transform: scale(0.95);
+    }
+
+    .item-img {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .promotion-item {
+        display: flex;
+        flex-direction: column;
+        flex-direction: column;
+        padding: 0 30px;
+        /*        background: #fff;*/
+        padding-top: 2px;
+        /*        border-radius: 12px;*/
+        /*        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;*/
+    }
+
+    .promotion-ttl {
+        height: 35px;
+        font-size: 22px;
+        margin: 17px 0 20px;
+        line-height: 27px;
+    }
+
+    .promotion-copy {
+        border-top: 2px solid #dcdcdc;
+        line-height: 22px;
+        padding: 20px 0 10px;
+        margin: 10px 0 8px;
+    }
+
+    .promotion-price {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-top: 2px solid #dcdcdc;
+        margin: 20px 0;
+        padding: 10px 0;
+    }
+
+    .promotion-date {
+        margin-bottom: 5px;
+    }
+
+    .f-bold {
+        font-size: 25px;
+    }
+    /*content*/
+    .content {
+        margin-top: 25px;
+        display: flex;
+        flex-direction: row;
+        background: #b2d9e8;
+        margin-right: -30px;
+        margin-left: -16px;
+        padding: 0 27px 0 15px;
+    }
+
+    .content-left {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+
+    .content-left-weather_item {
+        font-size: 12px;
+        display: inline-block;
+        background: rgba(255, 255, 255, 0.2);
+        padding: 4px 10px;
+        color: #fff;
+        border-radius: 4px;
+        border: 1px solid #fff;
+        margin-right: 10px;
+        width: 34%;
+    }
+
+    .content-left-text {
+    }
+
+    .content-right {
+        display: flex;
+        align-items: center;
+    }
+</style>
+
+<script>
+    // Get today's date in YYYY-MM-DD format
+    const today = new Date().toISOString().split('T')[0];
+
+    // Set the min attribute for check-in and check-out to today
+    document.getElementById('checkin').setAttribute('min', today);
+    document.getElementById('checkout').setAttribute('min', today);
+
+    // Automatically set check-in date to today
+    document.getElementById('checkin').value = today;
+
+    // Automatically set checkout date to one day after today
+    const tomorrow = new Date();
+    tomorrow.setDate(tomorrow.getDate() + 1);
+    const tomorrowStr = tomorrow.toISOString().split('T')[0];
+    document.getElementById('checkout').value = tomorrowStr;
+
+    // Function to calculate the number of nights between check-in and check-out
+    function calculateNights() {
+        const checkinDate = new Date(document.getElementById('checkin').value);
+        const checkoutDate = new Date(document.getElementById('checkout').value);
+
+        if (checkinDate && checkoutDate && checkoutDate >= checkinDate) {
+            const timeDiff = checkoutDate.getTime() - checkinDate.getTime();
+            const nights = Math.ceil(timeDiff / (1000 * 3600 * 24));
+            document.querySelector('.date').textContent = `${nights} đêm`;
+        } else {
+            document.querySelector('.date').textContent = '0 đêm';
+        }
+    }
+
+    // Update the min attribute of check-out date based on check-in date
+    document.getElementById('checkin').addEventListener('change', function () {
+        const checkinDate = new Date(this.value);
+        const nextDay = new Date(checkinDate);
+        nextDay.setDate(nextDay.getDate() + 1);
+        const nextDayStr = nextDay.toISOString().split('T')[0];
+        document.getElementById('checkout').setAttribute('min', this.value);
+        document.getElementById('checkout').value = nextDayStr;
+        calculateNights();
+    });
+
+    // Ensure checkout date is not earlier than check-in date
+    document.getElementById('checkout').addEventListener('change', function () {
+        const checkinDate = document.getElementById('checkin').value;
+        if (this.value < checkinDate) {
+            alert('Ngày trả phòng phải lớn hơn hoặc bằng ngày nhận phòng.');
+            const nextDay = new Date(checkinDate);
+            nextDay.setDate(nextDay.getDate() + 1);
+            const nextDayStr = nextDay.toISOString().split('T')[0];
+            this.value = nextDayStr;
+        }
+        calculateNights();
+    });
+
+    // Initial calculation
+    calculateNights();
+</script>

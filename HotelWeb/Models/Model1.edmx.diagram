@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="5548f6f7884847eeaf27f6fe0f129528" Name="Diagram1">
+        <EntityTypeShape EntityType="KhachSanModel.ChiTietDonHang" Width="1.5" PointX="5.25" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="KhachSanModel.ChiTietPhong" Width="1.5" PointX="8.25" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="KhachSanModel.DatPhong" Width="1.5" PointX="3" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="KhachSanModel.DonHang" Width="1.5" PointX="3" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="KhachSanModel.KhachHang" Width="1.5" PointX="0.75" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="KhachSanModel.LoaiPhong" Width="1.5" PointX="3.75" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="KhachSanModel.NguoiQuanTri" Width="1.5" PointX="0.75" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="KhachSanModel.Phong" Width="1.5" PointX="6" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KhachSanModel.TrangThaiDonDep" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KhachSanModel.TrangThaiPhong" Width="1.5" PointX="3.75" PointY="13.125" IsExpanded="true" />
+        <AssociationConnector Association="KhachSanModel.FK__ChiTietDo__MaChi__6383C8BA" ManuallyRouted="false" />
+        <AssociationConnector Association="KhachSanModel.FK__ChiTietDo__MaDon__6477ECF3" ManuallyRouted="false" />
+        <AssociationConnector Association="KhachSanModel.FK__ChiTietPh__MaLoa__5DCAEF64" ManuallyRouted="false" />
+        <AssociationConnector Association="KhachSanModel.FK__ChiTietPh__MaPho__5CD6CB2B" ManuallyRouted="false" />
+        <AssociationConnector Association="KhachSanModel.FK__DatPhong__MaKhac__5812160E" ManuallyRouted="false" />
+        <AssociationConnector Association="KhachSanModel.FK__DatPhong__MaPhon__571DF1D5" ManuallyRouted="false" />
+        <AssociationConnector Association="KhachSanModel.FK__DonHang__MaKhach__60A75C0F" ManuallyRouted="false" />
+        <AssociationConnector Association="KhachSanModel.FK__Phong__MaKhachHa__5165187F" ManuallyRouted="false" />
+        <AssociationConnector Association="KhachSanModel.FK__Phong__MaLoai__52593CB8" ManuallyRouted="false" />
+        <AssociationConnector Association="KhachSanModel.FK__Phong__MaTrangTh__534D60F1" ManuallyRouted="false" />
+        <AssociationConnector Association="KhachSanModel.FK__Phong__MaTrangTh__5441852A" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

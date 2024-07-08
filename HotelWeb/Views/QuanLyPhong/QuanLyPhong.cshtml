@@ -1,0 +1,312 @@
+﻿@model IEnumerable<HotelWeb.Models.Phong>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Quản Lý Phòng</title>
+    <link rel="stylesheet" href="~/Content/bootstrap-grid.min.css" />
+</head>
+<body>
+    <div class="container body grid">
+        <div class="row gx-2 flex-1" style="flex-direction: row">
+            @Html.Partial("_PartialSideBar")
+            <div class="content col-9">
+                <div class="main box-shadow display-flex">
+                    <div class="filter-bar">
+                        <select id="filter-category" class="filter-select">
+                            <option value="">Tất cả loại phòng</option>
+                            @foreach (var loai in Model.Select(m => m.LoaiPhong.TenLoai).Distinct())
+                            {
+                                <option value="@loai">@loai</option>
+                            }
+                        </select>
+                        <select id="filter-cleaning-status" class="filter-select">
+                            <option value="">Tất cả trạng thái dọn dẹp</option>
+                            @foreach (var trangThaiDonDep in Model.Select(m => m.TrangThaiDonDep.TenTrangThaiDonDep).Distinct())
+                            {
+                                <option value="@trangThaiDonDep">@trangThaiDonDep</option>
+                            }
+                        </select>
+                        <select id="filter-room-status" class="filter-select">
+                            <option value="">Tất cả trạng thái phòng</option>
+                            @foreach (var trangThaiPhong in Model.Select(m => m.TrangThaiPhong.TenTrangThai).Distinct())
+                            {
+                                <option value="@trangThaiPhong">@trangThaiPhong</option>
+                            }
+                        </select>
+                    </div>
+
+                    <div class="room-container">
+                        @foreach (var category in Model.Select(m => m.LoaiPhong.TenLoai).Distinct())
+                        {
+                            <div class="room-category" id="@category.ToLower().Replace(" ", "-")">
+                                <h3 class="text-center">@category</h3>
+                                <div class="room-cards-container d-flex flex-wrap justify-content-center">
+                                    @foreach (var item in Model.Where(r => r.LoaiPhong.TenLoai == category))
+                                    {
+                                        var roomStatusClass = "";
+                                        switch (item.TrangThaiPhong.TenTrangThai)
+                                        {
+                                            case "Phòng trống":
+                                                roomStatusClass = "room-available";
+                                                break;
+                                            case "Phòng đã đặt":
+                                                roomStatusClass = "room-booked";
+                                                break;
+                                            case "Phòng đang thuê":
+                                                roomStatusClass = "room-occupied";
+                                                break;
+                                        }
+
+                                        <div class="room-card @roomStatusClass"
+                                             data-category="@item.LoaiPhong.TenLoai"
+                                             data-cleaning-status="@item.TrangThaiDonDep.TenTrangThaiDonDep"
+                                             data-room-status="@item.TrangThaiPhong.TenTrangThai">
+                                            <div class="room-top-row">
+                                                <div class="room-id">
+                                                    <strong>@item.MaPhong</strong>
+                                                </div>
+                                                <div class="room-status">
+                                                    <strong>@item.TrangThaiPhong.TenTrangThai</strong>
+                                                </div>
+                                            </div>
+                                            <div class="room-middle">
+                                                @if (item.KhachHang != null)
+                                                {
+                                                    <div class="room-customer">
+                                                        <img class="icon" src="~/Image/iconuser.png" alt="icon">
+                                                        <strong style="font-size: 18px;">@item.KhachHang.TenKhachHang</strong>
+                                                    </div>
+                                                }
+                                                else
+                                                {
+                                                    <div class="room-available-text">
+                                                        <img class="icon" src="~/Image/icon-check.png" alt="icon">
+                                                        <strong style="font-size: 18px;">Phòng trống</strong>
+                                                    </div>
+                                                }
+                                            </div>
+                                            <div class="room-bottom">
+                                                <div class="room-cleaning-status">
+                                                    @item.TrangThaiDonDep.TenTrangThaiDonDep
+                                                </div>
+                                            </div>
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--<div class="row">
+            <div class="col-md-12">-->
+                <!-- Tìm kiếm Bar -->
+                <!--<div class="filter-bar">
+                    <select id="filter-category" class="filter-select">
+                        <option value="">Tất cả loại phòng</option>
+                        @foreach (var loai in Model.Select(m => m.LoaiPhong.TenLoai).Distinct())
+                        {
+                            <option value="@loai">@loai</option>
+                        }
+                    </select>
+                    <select id="filter-cleaning-status" class="filter-select">
+                        <option value="">Tất cả trạng thái dọn dẹp</option>
+                        @foreach (var trangThaiDonDep in Model.Select(m => m.TrangThaiDonDep.TenTrangThaiDonDep).Distinct())
+                        {
+                            <option value="@trangThaiDonDep">@trangThaiDonDep</option>
+                        }
+                    </select>
+                    <select id="filter-room-status" class="filter-select">
+                        <option value="">Tất cả trạng thái phòng</option>
+                        @foreach (var trangThaiPhong in Model.Select(m => m.TrangThaiPhong.TenTrangThai).Distinct())
+                        {
+                            <option value="@trangThaiPhong">@trangThaiPhong</option>
+                        }
+                    </select>
+                </div>
+
+                <div class="room-container">
+                    @foreach (var category in Model.Select(m => m.LoaiPhong.TenLoai).Distinct())
+                    {
+                        <div class="room-category" id="@category.ToLower().Replace(" ", "-")">
+                            <h3 class="text-center">@category</h3>
+                            <div class="room-cards-container d-flex flex-wrap justify-content-center">
+                                @foreach (var item in Model.Where(r => r.LoaiPhong.TenLoai == category))
+                                {
+                                    var roomStatusClass = "";
+                                    switch (item.TrangThaiPhong.TenTrangThai)
+                                    {
+                                        case "Phòng trống":
+                                            roomStatusClass = "room-available";
+                                            break;
+                                        case "Phòng đã đặt":
+                                            roomStatusClass = "room-booked";
+                                            break;
+                                        case "Phòng đang thuê":
+                                            roomStatusClass = "room-occupied";
+                                            break;
+                                    }
+
+                                    <div class="room-card @roomStatusClass"
+                                         data-category="@item.LoaiPhong.TenLoai"
+                                         data-cleaning-status="@item.TrangThaiDonDep.TenTrangThaiDonDep"
+                                         data-room-status="@item.TrangThaiPhong.TenTrangThai">
+                                        <div class="room-top-row">
+                                            <div class="room-id">
+                                                <strong>@item.MaPhong</strong>
+                                            </div>
+                                            <div class="room-status">
+                                                <strong>@item.TrangThaiPhong.TenTrangThai</strong>
+                                            </div>
+                                        </div>
+                                        <div class="room-middle">
+                                            @if (item.KhachHang != null)
+                                            {
+                                                <div class="room-customer">
+                                                    <img class="icon" src="~/Image/iconuser.png" alt="icon">
+                                                    <strong style="font-size: 18px;">@item.KhachHang.TenKhachHang</strong>
+                                                </div>
+                                            }
+                                            else
+                                            {
+                                                <div class="room-available-text">
+                                                    <img class="icon" src="~/Image/icon-check.png" alt="icon">
+                                                    <strong style="font-size: 18px;">Phòng trống</strong>
+                                                </div>
+                                            }
+                                        </div>
+                                        <div class="room-bottom">
+                                            <div class="room-cleaning-status">
+                                                @item.TrangThaiDonDep.TenTrangThaiDonDep
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>-->
+    </div>
+    <script>
+        document.getElementById('filter-category').addEventListener('change', filterRooms);
+        document.getElementById('filter-cleaning-status').addEventListener('change', filterRooms);
+        document.getElementById('filter-room-status').addEventListener('change', filterRooms);
+
+        function filterRooms() {
+            var category = document.getElementById('filter-category').value;
+            var cleaningStatus = document.getElementById('filter-cleaning-status').value;
+            var roomStatus = document.getElementById('filter-room-status').value;
+
+            var roomCards = document.querySelectorAll('.room-card');
+
+            roomCards.forEach(function (card) {
+                var matchesCategory = !category || card.getAttribute('data-category') === category;
+                var matchesCleaningStatus = !cleaningStatus || card.getAttribute('data-cleaning-status') === cleaningStatus;
+                var matchesRoomStatus = !roomStatus || card.getAttribute('data-room-status') === roomStatus;
+
+                if (matchesCategory && matchesCleaningStatus && matchesRoomStatus) {
+                    card.style.display = '';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
+
+<style>
+    /* Filter Bar */
+    .filter-bar {
+        display: flex;
+        gap: 10px;
+        margin: 45px 0 20px 85px;
+    }
+
+    .filter-select {
+        padding: 5px;
+    }
+
+    /* Room */
+    .room-container {
+        margin-top: 20px;
+    }
+
+    .room-category {
+        margin-bottom: 20px;
+    }
+
+    .room-cards-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px;
+    }
+
+    .room-card {
+        height: 200px;
+        width: 200px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        box-sizing: border-box;
+        transition: transform 0.2s;
+    }
+
+        .room-card:hover {
+            transform: scale(1.05);
+        }
+
+    .room-top-row {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+    }
+
+    .icon {
+        vertical-align: middle;
+        margin-right: 5px;
+        width: 24px;
+        height: 24px;
+    }
+
+    .room-middle {
+        text-align: center;
+        margin-top: auto;
+    }
+
+    .room-bottom {
+        text-align: center;
+    }
+
+    .room-available {
+        background-color: #70d692;
+        color: white;
+    }
+
+    .room-booked {
+        background-color: #909090;
+        color: white;
+    }
+
+    .room-occupied {
+        background-color: #8ab6cd;
+        color: white;
+    }
+
+    .room-id, .room-status, .room-customer, .room-cleaning-status {
+        margin: 5px 0;
+    }
+</style>

@@ -1,0 +1,260 @@
+﻿@{
+    ViewBag.Title = "Contact";
+    <link rel="stylesheet" href="~/Content/Stylesheet/stylesheet.css" asp-append-version="true" />
+}
+
+
+<div class="container body grid">
+    <div class="row gx-2 flex-1">
+        @Html.Partial("_PartialSideBar")
+        <div class="content col-9">
+            <div class="main box-shadow display-flex">
+                Contact page
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<style>
+    body.web {
+    background-color: var(--bg-primary);
+}
+:root {
+    --bg-primary: rgb(237,240,244);
+    --bg-white: #fff;
+    --colorTextNature: #333333;
+    --btnMainColor: rgb(25,146,193);
+}
+.display-flex {
+}
+div.body {
+    display: flex;
+    margin-top: 86px;
+    height: 2000px;
+    padding: 0;
+}
+
+/*Header*/
+
+div.header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    border-right: 1px solid #f5f5f5;
+    z-index: 10;
+    background-color: var(--bg-white);
+}
+
+ul.header-list {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    padding: 8px 0;
+    align-items: center;
+    margin: 0;
+}
+
+li.header-item {
+    padding: 10px 20px;
+}
+
+.dp-flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+li.btnMain {
+    background-color: var(--btnMainColor);
+    border-color: #1861ac;
+    padding: 10px 25px;
+    border-radius: 5px;
+    margin-left: 20px;
+    border: 1px solid var(--btnMainColor);
+}
+
+    li.btnMain:hover {
+        opacity: 0.9;
+        border: 1px solid var(--btnMainColor);
+    }
+
+.btnOutline {
+    background-color: var(--bg-white);
+    border-color: #1861ac;
+    padding: 10px 25px;
+    border-radius: 5px;
+    margin-left: 10px;
+    border: 1px solid var(--btnMainColor);
+}
+
+    li.btnOutline:hover {
+        opacity: 0.9;
+        border: 1px solid var(--btnMainColor);
+    }
+
+/*Navbar*/
+a.nav-link {
+    padding: 0;
+}
+
+div.navbar {
+    display: flex;
+    /*    position: fixed;
+    top: 0;
+    left: 0;*/
+    /*    width: 20%;*/
+    height: 100%;
+    border-right: 1px solid #f5f5f5;
+    align-items: start;
+    background-color: var(--bg-primary);
+    transform: scale(0.98,0.98);
+}
+
+ul.navbar-list {
+    flex-direction: row;
+    list-style: none;
+    padding: 0;
+    flex: 1;
+}
+
+
+
+li.navbar-item {
+    padding: 10px 20px;
+    margin: 3px 0;
+    color: var(--colorTextNature);
+
+
+}
+
+
+
+li.navbar-item:hover {
+    background-color: var(--bg-white);
+    flex: 1 1 auto;
+    position: relative;
+    border-radius: 6px;
+    overflow: hidden;
+    transition: background-color 100ms linear;
+}
+
+
+/*Content*/
+
+div .content {
+    /*    width: 80%;*/
+
+    transform: scale(0.98,0.98);
+    flex: 1;
+}
+
+div.main {
+    background-color: var(--bg-white);
+    margin-top: 20px;
+    border-radius: 20px;
+    border: 1px solid #ebebeb;
+}
+
+.flex-1 {
+    flex: 1;
+}
+
+/*Content qc top*/
+
+.row {
+    flex-direction:column;
+}
+
+@*@keyframes slide {
+    50% {
+        background-image: url(https://localhost:7072/images/skiing-slider-img-1.jpg);
+    }
+
+    100% {
+        background-image: url(https://localhost:7072/images/backgroup-slide.jpg);
+    }
+}*@
+
+.slide {
+    z-index: -1;
+}
+
+.slide-img  {
+    height: 28rem;
+    width: 100%;
+    background-image: url(https://localhost:7072/images/backgroup-slide.jpg);
+    animation: zoom_banner-heading 20s infinite, FadeIn 0.4s linear, slide 10s infinite, FadeIn 0.4s linear;
+}
+
+.slide-img {
+    position: relative;
+    overflow: hidden;
+}
+
+.slide-list {
+    display: flex;
+    justify-content: space-between;
+    padding: 4rem;
+    position: absolute;
+    top: 10rem;
+    right: 0;
+    left: 0;
+}
+
+.slide-list-icon i {
+    font-size: 6rem;
+    color: #3fd0d4;
+}
+
+.slide-list-center {
+    color: white;
+    text-align: center;
+    animation: text-center 20s infinite linear, am-opacity 10s infinite;
+}
+
+.slide-list-center-logo {
+    font-size: 4rem;
+    margin: 2rem;
+    font-family: "Satisfy", sans-serif;
+}
+
+.slide-list-center-title {
+    font-size: 8rem;
+    margin: 0;
+}
+
+.slide-list-center-desc {
+    font-size: 1.6rem;
+    max-width: 100rem;
+    line-height: 3rem;
+}
+
+.slide-list-icon {
+    padding-top: 18rem;
+}
+
+@*@keyframes am-top {
+    0% {
+        bottom: -17rem;
+    }
+
+    100% {
+        bottom: 0rem;
+    }
+}
+
+@keyframes am-opacity {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}*@
+
+
+
+</style>
+
